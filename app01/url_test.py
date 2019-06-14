@@ -1,12 +1,11 @@
-from django.contrib import admin
-from django.urls import path
-from django.shortcuts import HttpResponse,render
 import urllib.request
 import re
 
 def temp_function(lines):
-    content_content = dict()
+    content_content = {}
     content_last = []
+    num = 0
+    #lines = [ 'http://192.168.5.148:60002','http://192.168.5.148:60002']
     for url in lines:
         try:
             page = urllib.request.urlopen(url)
@@ -24,4 +23,6 @@ def temp_function(lines):
                 content_content['service_name'] = a[0]
                 content_content['version'] = a[1]
                 content_last.append({'url': content_content['url'], 'service_name': content_content['service_name'],'version': content_content['version']})
-    return content_last
+    print(content_last)
+lines = [ 'http://192.168.5.168:60032','http://192.168.5.168:60001','http://192.168.5.168:60002']
+temp_function(lines)
