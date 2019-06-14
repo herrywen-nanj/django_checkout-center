@@ -51,5 +51,13 @@ def test__158(request):
     content_last = temp_function.temp_function(lines)
     return render(request,"test.html",{"list":content_last})
 
+def test__168(request):
+    lines = ['http://192.168.1.168:60001','http://192.168.1.168:60002','http://192.168.1.168:60003','http://192.168.1.168:60004','http://192.168.1.168:60005','http://192.168.1.168:60006','http://192.168.1.168:60008','http://192.168.1.168:60011','http://192.168.1.168:60014','http://192.168.1.168:60016','http://192.168.1.168:60019','http://192.168.1.168:60021','http://192.168.1.168:60023','http://192.168.1.168:60025','http://192.168.1.168:60026']
+    content_last = temp_function.temp_function(lines)
+    return render(request,"test.html",{"list":content_last})
+
+
+
+#汇总函数
 def sumer(request):
     return render(request,"base.html")
