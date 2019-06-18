@@ -5,6 +5,7 @@ import urllib.request
 import re
 
 def temp_function():
+    a = []
     content_content = {}
     content_content_1 = {}
     content_last = []
@@ -14,7 +15,6 @@ def temp_function():
         try:
             page = urllib.request.urlopen(url)
         except urllib.error.URLError:
-            print("url链接是{}".format(url))
             content_content_1['url'] = url
             content_content_1['server_name'] = ''
             content_content_1['version'] = ''
@@ -27,11 +27,17 @@ def temp_function():
             else:
                 service_name_version = " ".join(title)
                 a = service_name_version.split(' ')
+                #print(service_name_version)
+                #print(service_name_version.split(' '))
+                #a.append(service_name_version)
+                #print(a)
+                #a.append(service_name_version.split(' '))
+                #print("a这个数组是{}".format(a))
                 content_content['url'] = url
                 content_content['service_name'] = a[0]
                 content_content['version'] = a[1]
                 content_last.append({'url': content_content['url'], 'service_name': content_content['service_name'],'version': content_content['version']})
-    content_last = content_last + content_first
+    #content_last = content_last + content_first
     print(content_last)
 
 

@@ -27,5 +27,8 @@ urlpatterns = [
     path('test__148/',views.test__148),
     path('test__158/',views.test__158),
     path('test__168/',views.test__168),
+    path('meinian/',views.meinian),
+    path('yinchuan',views.yinchuan),
+    path('nalong',views.nalong),
     path('sumer/',views.sumer),
 ]
